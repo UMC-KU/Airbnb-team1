@@ -5,8 +5,10 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.airbnb_team1.R
+import com.example.airbnb_team1.data.remote.data.DataRetrofitClass
 import com.example.airbnb_team1.databinding.ActivityMainBinding
 import com.example.airbnb_team1.ui.BaseActivity
+import com.example.airbnb_team1.ui.main.home.HomeDetailData
 
 
 class MainActivity: BaseActivity<ActivityMainBinding>(ActivityMainBinding::inflate) {
@@ -19,4 +21,5 @@ class MainActivity: BaseActivity<ActivityMainBinding>(ActivityMainBinding::infla
 
         binding.mainBottomNavigation.setupWithNavController(navController)
     }
+
 }

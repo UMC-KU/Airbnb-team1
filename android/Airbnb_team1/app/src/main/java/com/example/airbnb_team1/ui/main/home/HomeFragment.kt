@@ -1,33 +1,53 @@
 package com.example.airbnb_team1.ui.main.home
 
+import android.app.Application
+import android.content.Context
+import android.os.Build.VERSION_CODES.P
+import android.os.Bundle
+import android.util.Log
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.airbnb_team1.ApplicationClass
+import com.example.airbnb_team1.ApplicationClass.Companion.retrofit
 import com.example.airbnb_team1.R
+import com.example.airbnb_team1.data.remote.data.DataResponse
+import com.example.airbnb_team1.data.remote.data.DataRetrofitClass
+import com.example.airbnb_team1.data.remote.data.DataRetrofitClass.getAll
 import com.example.airbnb_team1.databinding.FragmentHomeBinding
 import com.example.airbnb_team1.ui.BaseFragment
+import com.example.airbnb_team1.ui.main.MainActivity
 
 
-class HomeFragment(): BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate) {
+class HomeFragment() : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate) {
 
-    val selectMenuList = ArrayList<HomeSelectedMenuData>()
-    val detailDataList = ArrayList<HomeDetailData>()
+    var selectMenuList = ArrayList<HomeSelectedMenuData>()
+    var detailDataList = ArrayList<HomeDetailData>()
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        getAll()
+        Log.d("test", detailDataList.toString())
+    }
     override fun initAfterBinding() {
         initSelectMenuList()
-        initDetailDataList()
 
         val menuAdapter = HomeSelectMenuRVAdapter(selectMenuList)
-
         binding.homeSelectMenuRv.adapter = menuAdapter
-        binding.homeSelectMenuRv.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        binding.homeSelectMenuRv.layoutManager =
+            LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         menuAdapter.setMyItemClickListener(object : HomeSelectMenuRVAdapter.OnItemClickListener {
             override fun onItemClick(selectedMenu: HomeSelectedMenuData) {
+
 
             }
         })
 
         val detailRVAdapter = HomeDetailRVAdapter(detailDataList)
         binding.homeInfoRv.adapter = detailRVAdapter
-        binding.homeInfoRv.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-        detailRVAdapter.setMyItemClickListener(object : HomeDetailRVAdapter.MyItemClickListener{
+        binding.homeInfoRv.layoutManager =
+            LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+        detailRVAdapter.setMyItemClickListener(object : HomeDetailRVAdapter.OnItemClickListener {
             override fun onItemClick(detailData: HomeDetailData) {
 
             }
@@ -37,7 +57,7 @@ class HomeFragment(): BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::inf
     }
 
 
-    fun initSelectMenuList(){
+    fun initSelectMenuList() {
         val temp = arrayListOf<HomeSelectedMenuData>(
             HomeSelectedMenuData(R.drawable.island, resources.getString(R.string.search_island)),
             HomeSelectedMenuData(R.drawable.park, resources.getString(R.string.search_park)),
@@ -54,15 +74,6 @@ class HomeFragment(): BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::inf
         selectMenuList.addAll(temp)
     }
 
-    fun initDetailDataList(){
-        val temp = arrayListOf<HomeDetailData>(
-            HomeDetailData("url", "name", "nation", "period", 123, 123),
-            HomeDetailData("url", "name", "nation", "period", 123, 123),
-            HomeDetailData("url", "name", "nation", "period", 123, 123),
-            HomeDetailData("url", "name", "nation", "period", 123, 123)
-        )
 
-        detailDataList.addAll(temp)
 
-    }
 }
