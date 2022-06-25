@@ -296,6 +296,7 @@ main {
 .room-summary-container {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
 }
 
 .summary-roominfo {
@@ -315,4 +316,31 @@ main {
 .roominfo-capacity {
     display: flex;
     flex-direction: row;
+}
+
+.summary-icon {
+    margin-left: 16px;
+}
+
+.summary-icon-button {
+    cursor: pointer;
+    height: 100%;
+    width: 100;
+    border-radius: 50%;
+    border: 0px;
+    background: transparent;
+    display: block;
+    margin: 0px;
+    padding: 0px;
+}
+
+.icon-button-div {
+    height: 56px;
+    width: 56px;
+}
+
+.icon-image {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
 }
