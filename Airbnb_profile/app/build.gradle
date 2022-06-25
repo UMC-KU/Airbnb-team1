@@ -6,6 +6,9 @@ plugins {
 android {
     compileSdk 32
 
+    task wrapper(type: Wrapper) {
+        gradleVersion = '7.0'
+    }
     defaultConfig {
         applicationId "com.example.airbnb_profile"
         minSdk 21
@@ -28,6 +31,9 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+    buildFeatures{
+        viewBinding true
     }
 }
 
