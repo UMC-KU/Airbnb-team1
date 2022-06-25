@@ -1,5 +1,6 @@
 package com.example.airbnb_team1.ui.splash
 
+import android.content.Intent
 import android.os.Handler
 import android.os.Looper
 import com.example.airbnb_team1.data.remote.auth.AuthService
@@ -13,7 +14,11 @@ class SplashActivity: BaseActivity<ActivitySplashBinding>(ActivitySplashBinding:
 
     override fun initAfterBinding() {
         Handler(Looper.getMainLooper()).postDelayed({
-            autoLogin()
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+
+//            autoLogin()
+
         }, 2000)
     }
 
@@ -30,6 +35,6 @@ class SplashActivity: BaseActivity<ActivitySplashBinding>(ActivitySplashBinding:
     }
 
     override fun onAutoLoginFailure(code: Int, message: String) {
-        startActivityWithClear(LoginActivity::class.java)
+//        startActivityWithClear(LoginActivity::class.java)
     }
 }
