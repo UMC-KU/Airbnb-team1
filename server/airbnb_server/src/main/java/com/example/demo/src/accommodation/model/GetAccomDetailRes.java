@@ -17,7 +17,6 @@ public class GetAccomDetailRes {
     private String host;
     private int user_num_max;
     private int room_num;
-    private int bed_num;
     private List<GetRoomDetailRes> roomDetails;
     private List<GetFacilityRes> facilities;
 

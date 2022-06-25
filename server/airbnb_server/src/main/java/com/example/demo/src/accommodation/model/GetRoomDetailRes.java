@@ -8,6 +8,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 public class GetRoomDetailRes {
+    private int room_id;
     private String room_name;
     private String room_detail;
 }

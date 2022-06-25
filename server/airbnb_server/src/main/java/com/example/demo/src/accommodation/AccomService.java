@@ -1,12 +1,8 @@
 package com.example.demo.src.accommodation;
 
 
-import com.example.demo.config.BaseException;
-import com.example.demo.src.member.model.PatchUserReq;
-import com.example.demo.src.member.model.PostUserReq;
-import com.example.demo.src.member.model.PostUserRes;
+import com.example.demo.src.accommodation.model.GetAccomDetailRes;
 import com.example.demo.utils.JwtService;
-import com.example.demo.utils.SHA256;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +26,10 @@ public class AccomService {
         this.accomProvider = accomProvider;
         this.jwtService = jwtService;
 
+    }
+
+    public GetAccomDetailRes getAccomDetails(int accom_id) {
+        return accomDao.selectAccomDetails(accom_id);
     }
 
 

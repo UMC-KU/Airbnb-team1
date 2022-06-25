@@ -2,8 +2,8 @@ package com.example.demo.src.accommodation;
 
 import com.example.demo.config.BaseException;
 import com.example.demo.config.BaseResponse;
+import com.example.demo.src.accommodation.model.GetAccomDetailRes;
 import com.example.demo.src.accommodation.model.GetAccomRes;
-import com.example.demo.src.member.model.*;
 import com.example.demo.utils.JwtService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -40,6 +40,12 @@ public class AccomController {
         return new BaseResponse<>(getAccomResList);
     }
 
+    @ResponseBody
+    @GetMapping("/detail/{accom_id}")
+    public BaseResponse<GetAccomDetailRes> getAccomDetails(@PathVariable int accom_id){
+        GetAccomDetailRes getAccomDetailRes = accomService.getAccomDetails(accom_id);
+        return new BaseResponse<>(getAccomDetailRes);
+    }
 
 
 }
