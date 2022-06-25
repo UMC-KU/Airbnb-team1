@@ -25,8 +25,6 @@ public class AccomController {
     private final JwtService jwtService;
 
 
-
-
     public AccomController(AccomProvider accomProvider, AccomService accomService, JwtService jwtService){
         this.accomProvider = accomProvider;
         this.accomService = accomService;
@@ -46,6 +44,4 @@ public class AccomController {
         GetAccomDetailRes getAccomDetailRes = accomService.getAccomDetails(accom_id);
         return new BaseResponse<>(getAccomDetailRes);
     }
-
-
 }

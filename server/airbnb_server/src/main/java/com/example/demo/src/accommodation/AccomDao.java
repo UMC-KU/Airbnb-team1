@@ -72,7 +72,6 @@ public class AccomDao {
                 "  and ac.status = 'active' and f.status = 'active'\n" +
                 "  and ac.accom_id=?;";
 
-        // 쿼리 3개
         return this.jdbcTemplate.queryForObject(getAccomDetailQuery,
                 (rs, rowNum) -> new GetAccomDetailRes(
                         rs.getInt("accom_id"),
