@@ -7,8 +7,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.airbnb_team1.databinding.ItemDetailInfoBinding
 
-class HomeDetailRVAdapter(var detailDataList: ArrayList<HomeDetailData>) : RecyclerView.Adapter<HomeDetailRVAdapter.ViewHolder>(){
+class HomeDetailRVAdapter() : RecyclerView.Adapter<HomeDetailRVAdapter.ViewHolder>(){
     lateinit var context: Context
+
+    private var detailDataList = ArrayList<HomeDetailData>()
+
     interface OnItemClickListener {
         fun onItemClick(detailData: HomeDetailData)
     }
@@ -50,6 +53,10 @@ class HomeDetailRVAdapter(var detailDataList: ArrayList<HomeDetailData>) : Recyc
 
     override fun getItemCount(): Int {
         return detailDataList.size
+    }
+
+    fun setList(result: ArrayList<HomeDetailData>){
+        detailDataList = result
     }
 
 

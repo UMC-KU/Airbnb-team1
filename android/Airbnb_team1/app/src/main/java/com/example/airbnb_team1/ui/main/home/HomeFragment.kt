@@ -1,36 +1,22 @@
 package com.example.airbnb_team1.ui.main.home
 
-import android.app.Application
-import android.content.Context
-import android.os.Build.VERSION_CODES.P
-import android.os.Bundle
-import android.util.Log
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.airbnb_team1.ApplicationClass
-import com.example.airbnb_team1.ApplicationClass.Companion.retrofit
 import com.example.airbnb_team1.R
-import com.example.airbnb_team1.data.remote.data.DataResponse
 import com.example.airbnb_team1.data.remote.data.DataRetrofitClass
-import com.example.airbnb_team1.data.remote.data.DataRetrofitClass.getAll
 import com.example.airbnb_team1.databinding.FragmentHomeBinding
 import com.example.airbnb_team1.ui.BaseFragment
-import com.example.airbnb_team1.ui.main.MainActivity
+import okhttp3.internal.notify
 
 
-class HomeFragment() : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate) {
+class HomeFragment() : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate), CompletionListener {
 
     var selectMenuList = ArrayList<HomeSelectedMenuData>()
-    var detailDataList = ArrayList<HomeDetailData>()
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        getAll()
-        Log.d("test", detailDataList.toString())
-    }
+    lateinit var detailRVAdapter: HomeDetailRVAdapter
+    val dataRetrofitClass = DataRetrofitClass()
+
     override fun initAfterBinding() {
         initSelectMenuList()
+        dataRetrofitClass.getAll(this)
 
         val menuAdapter = HomeSelectMenuRVAdapter(selectMenuList)
         binding.homeSelectMenuRv.adapter = menuAdapter
@@ -43,7 +29,7 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::in
             }
         })
 
-        val detailRVAdapter = HomeDetailRVAdapter(detailDataList)
+        detailRVAdapter = HomeDetailRVAdapter()
         binding.homeInfoRv.adapter = detailRVAdapter
         binding.homeInfoRv.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
@@ -74,6 +60,10 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::in
         selectMenuList.addAll(temp)
     }
 
+    override fun loadComplete(data: ArrayList<HomeDetailData>) {
+        detailRVAdapter.setList(data)
+        detailRVAdapter.notifyDataSetChanged()
+    }
 
 
 }
