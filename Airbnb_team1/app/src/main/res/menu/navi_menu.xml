@@ -1,22 +1,27 @@
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/homeFragment"
+        android:id="@+id/first"
         android:enabled="true"
-        android:title="@string/menu_search"
-        android:icon="@drawable/btm_nav_search_on"/>
+        android:icon="@drawable/btm_nav_search_off"
+        android:title="검색"
+        app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/travelFragment"
-        android:enabled="true"
-        android:title="@string/menu_travel"
-        android:icon="@drawable/btm_nav_trip_off"/>
+        android:id="@+id/second"
+        android:icon="@drawable/btm_nav_trip_off"
+        android:title="여행"
+        app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/messageFragment"
+        android:id="@+id/third"
         android:enabled="true"
-        android:title="@string/menu_message"
-        android:icon="@drawable/btm_nav_message_off"/>
+        android:icon="@drawable/btm_nav_message_off"
+        android:title="메시지"
+        app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/profileFragment"
+        android:id="@+id/forth"
         android:enabled="true"
-        android:title="@string/menu_profile"
-        android:icon="@drawable/btm_nav_profile_off"/>
+        android:icon="@drawable/btm_nav_profile_off"
+        android:title="프로필"
+        app:showAsAction="ifRoom" />
 </menu>

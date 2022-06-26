@@ -1,0 +1,749 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.main.profile.ProfileFragment">
+
+    <ScrollView
+        android:id="@+id/profile_scroll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/profile_constraint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+            <LinearLayout
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+<LinearLayout
+    android:id="@+id/profile_detail_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profile_profileimage_iv"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="30dp"
+                    android:src="@drawable/ic_launcher_background"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/profile_name_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="10dp"
+                    android:text="UMC"
+                    android:textColor="@color/black"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/profile_profile_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="15dp"
+        android:backgroundTint="@color/white"
+        android:text="프로필보기"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:rippleColor="#FFFFFF" />
+<!--                <TextView-->
+<!--                    android:id="@+id/profile_click_tv"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="30dp"-->
+<!--                    android:layout_marginTop="15dp"-->
+<!--                    android:text="프로필 보기"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="12sp"-->
+<!--                    android:background="@drawable/fragment_border1"/>-->
+-->
+</LinearLayout>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="104dp"
+                    android:layout_marginTop="13dp"
+                    android:src="@drawable/profile_bann1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="36dp"
+                    android:text="계정 관리"
+                    android:textColor="@color/black"
+                    android:textSize="22sp" />
+
+
+                <LinearLayout
+                    android:layout_width="300dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="35dp"
+                    android:background="@drawable/fragment_border"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/profile_info_iv"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="7dp"
+
+                        android:src="@drawable/btm_nav_profile_off" />
+
+                    <TextView
+                        android:id="@+id/profile_info_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="23dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="8dp"
+                        android:text="개인 정보"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:layout_width="33dp"
+                        android:layout_height="33dp"
+                        android:layout_marginStart="160dp"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/btn_arrow_black_1" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="300dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/fragment_border"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/profile_cash_iv"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="7dp"
+                        android:src="@drawable/ic_cash" />
+
+                    <TextView
+                        android:id="@+id/profile_cash_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="23dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="8dp"
+                        android:text="결제 및 대금 수령"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:layout_width="33dp"
+                        android:layout_height="33dp"
+                        android:layout_marginStart="113dp"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/btn_arrow_black_1" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="300dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/fragment_border"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/profile_trans_iv"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="7dp"
+                        android:src="@drawable/ic_character" />
+
+                    <TextView
+                        android:id="@+id/profile_trans_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="23dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="8dp"
+                        android:text="번역"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:layout_width="33dp"
+                        android:layout_height="33dp"
+                        android:layout_marginStart="188dp"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/btn_arrow_black_1" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="300dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/fragment_border"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/profile_alarm_iv"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="7dp"
+                        android:src="@drawable/ic_alarm" />
+
+                    <TextView
+                        android:id="@+id/profile_alarm_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="23dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="8dp"
+                        android:text="알림"
+                        android:textColor="@color/black"
+                        android:textSize="12sp" />
+
+                    <ImageView
+                        android:layout_width="33dp"
+                        android:layout_height="33dp"
+                        android:layout_marginStart="192dp"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/btn_arrow_black_1" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="300dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/fragment_border"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/profile_security_iv"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="7dp"
+                        android:src="@drawable/ic_locker" />
+
+                    <TextView
+                        android:id="@+id/profile_security_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="23dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="8dp"
+                        android:text="개인정보 보호 및 공유"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:layout_width="33dp"
+                        android:layout_height="33dp"
+                        android:layout_marginStart="87dp"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/btn_arrow_black_1" />
+                </LinearLayout>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="30dp"
+                    android:text="호스팅"
+                    android:textColor="@color/black"
+                    android:textSize="22sp" />
+
+                <LinearLayout
+                    android:layout_width="300dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/fragment_border"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/profile_room_iv"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="7dp"
+                        android:src="@drawable/ic_add_house" />
+
+                    <TextView
+                        android:id="@+id/profile_room_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="23dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="8dp"
+                        android:text="숙소 등록하기"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:layout_width="33dp"
+                        android:layout_height="33dp"
+                        android:layout_marginStart="134dp"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/btn_arrow_black_1" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="300dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/fragment_border"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/profile_activity_iv"
+                        android:layout_width="33dp"
+                        android:layout_height="33dp"
+                        android:layout_marginTop="7dp"
+                        android:src="@drawable/ic_snorkeler" />
+
+                    <TextView
+                        android:id="@+id/profile_activity_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="23dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="8dp"
+                        android:text="체험 호스팅하기"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:layout_width="33dp"
+                        android:layout_height="33dp"
+                        android:layout_marginStart="117dp"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/btn_arrow_black_1" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="36dp"
+                    android:text="추천 및 여행 크레딧"
+                    android:textColor="@color/black"
+                    android:textSize="22sp" />
+
+                <LinearLayout
+                    android:layout_width="300dp"
+                    android:layout_height="70dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/fragment_border"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/profile_host_iv"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="7dp"
+                        android:src="@drawable/ic_present" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/profile_host_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="23dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="8dp"
+                            android:text="호스트 초대하기"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="207dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="23dp"
+                            android:text="호스트를 새로 추천할 때마다 19,412의 크레딧을
+                            받으세요."
+                            android:textSize="9sp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="33dp"
+                        android:layout_height="33dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="7dp"
+                        android:src="@drawable/btn_arrow_black_1" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="36dp"
+                    android:text="도구"
+                    android:textColor="@color/black"
+                    android:textSize="22sp" />
+
+                <LinearLayout
+                    android:layout_width="300dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/fragment_border"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/profile_tool_iv"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="7dp"
+                        android:src="@drawable/ic_book" />
+
+                    <TextView
+                        android:id="@+id/profile_tool_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="23dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="8dp"
+                        android:text="시리 설정"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:layout_width="33dp"
+                        android:layout_height="33dp"
+                        android:layout_marginStart="160dp"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/btn_arrow_black_1" />
+
+                </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="36dp"
+                    android:text="에어비앤비 지원"
+                    android:textColor="@color/black"
+                    android:textSize="22sp" />
+                <LinearLayout
+                    android:layout_width="300dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/fragment_border"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/profile_trip_iv"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="7dp"
+                        android:src="@drawable/btm_nav_trip_off" />
+
+                    <TextView
+                        android:id="@+id/profile_trip_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="23dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="8dp"
+                        android:text="에어비앤비 이용 방법"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:layout_width="33dp"
+                        android:layout_height="33dp"
+                        android:layout_marginStart="92dp"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/btn_arrow_black_1" />
+
+                </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="300dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/fragment_border"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/profile_safe_iv"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="7dp"
+                    android:src="@drawable/ic_safe_guard" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/profile_safe_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="23dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="8dp"
+                        android:text="안전 센터"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="207dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="23dp"
+                        android:text="안전한 여행에 필요한 정보, 도구, 지원을 받으세요."
+                        android:textSize="9sp" />
+                </LinearLayout>
+                <ImageView
+                    android:layout_width="33dp"
+                    android:layout_height="33dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="7dp"
+                    android:src="@drawable/btn_arrow_black_1" />
+            </LinearLayout>
+                <LinearLayout
+                    android:layout_width="300dp"
+                    android:layout_height="60dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/fragment_border"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/profile_service_iv"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="7dp"
+                        android:src="@drawable/ic_question_person" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/profile_service_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="23dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="4dp"
+                            android:text="이웃 민원 지원 서비스에 연락하기"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="207dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="23dp"
+                            android:text="거주하고 계신 지역에서 일어나는 홈셰어링 활동에 대
+한 우려 사항을 에어비앤비에 알려주세요."
+                            android:textSize="9sp"
+                            android:layout_marginBottom="2dp"/>
+                    </LinearLayout>
+                    <ImageView
+                        android:layout_width="33dp"
+                        android:layout_height="33dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="7dp"
+                        android:src="@drawable/btn_arrow_black_1" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="300dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/fragment_border"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/profile_que_iv"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="7dp"
+                        android:src="@drawable/ic_question" />
+
+                    <TextView
+                        android:id="@+id/profile_que_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="23dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="8dp"
+                        android:text="도움말"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:layout_width="33dp"
+                        android:layout_height="33dp"
+                        android:layout_marginStart="176dp"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/btn_arrow_black_1" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="300dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/fragment_border"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/profile_fd_iv"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="7dp"
+                        android:src="@drawable/ic_posting" />
+
+                    <TextView
+                        android:id="@+id/profile_fd_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="23dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="8dp"
+                        android:text="피드백 남기기"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:layout_width="33dp"
+                        android:layout_height="33dp"
+                        android:layout_marginStart="134dp"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/btn_arrow_black_1" />
+
+                </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="36dp"
+                    android:text="법률"
+                    android:textColor="@color/black"
+                    android:textSize="22sp" />
+                <LinearLayout
+                    android:layout_width="300dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/fragment_border"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/profile_detail_iv"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="7dp"
+                        android:src="@drawable/ic_book" />
+
+                    <TextView
+                        android:id="@+id/profile_detail_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="23dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="8dp"
+                        android:text="이용 약관"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:layout_width="33dp"
+                        android:layout_height="33dp"
+                        android:layout_marginStart="160dp"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/btn_arrow_black_1" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="300dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/fragment_border"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/profile_pinfo_iv"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="7dp"
+                        android:src="@drawable/ic_book" />
+
+                    <TextView
+                        android:id="@+id/profile_pinfo_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="23dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="8dp"
+                        android:text="개인정보 처리방침"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:layout_width="33dp"
+                        android:layout_height="33dp"
+                        android:layout_marginStart="108dp"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/btn_arrow_black_1" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="40dp"
+                    android:background="@drawable/fragment_border">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="로그아웃"
+                    android:textSize="12sp"
+                    android:textColor="@color/black"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/fragment_border1"/>
+                </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="버전: 22.25 (203129)"
+                    android:textSize="7sp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginBottom="10dp"/>
+
+            </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</FrameLayout>

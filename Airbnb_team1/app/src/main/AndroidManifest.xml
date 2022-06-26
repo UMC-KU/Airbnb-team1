@@ -23,7 +23,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <activity
+            android:name=".ui.main.profile.DetailActivity"
+            android:exported="false" />
         <activity
             android:name="com.example.airbnb_team1.ui.login.LoginActivity"
             android:exported="true"/>
