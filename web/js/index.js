@@ -40,3 +40,34 @@ for (var i=0; i<index; i++) {
 }
 
 
+var imgBoxs = document.getElementsByClassName("imgBox");
+for(var ele of imgBoxs) {
+    console.log(ele);
+    ele.getElementsByClassName("left_roll")[0].addEventListener("click", ()=>{
+        console.log(ele.getElementsByClassName("left_roll")[0]);
+        for(var i=0; i<3; i++) {
+            console.log(ele.getElementsByTagName("img")[i]);
+            console.log(ele.getElementsByTagName("img")[i].style);
+            if(ele.getElementsByTagName("img")[i].style.display == "block") {
+                ele.getElementsByTagName("img")[i].style.display = "none";
+                ele.getElementsByTagName("img")[(i+3)%3].style.display = "block";
+                break;
+            }
+        }
+    })
+}
+
+fetch("/accom/all", {method:"GET"})
+.then((response) => {
+    console.log("response:", response);
+    return response.json();
+})
+.then((data)=>{
+    console.log("data:", data);
+
+    var item = document.getElementsByClassName("item")[0].cloneNode(true);
+    console.log("item:", item);
+})
+.catch((error) => {
+    console.log("error:", error);
+});
